@@ -1,0 +1,124 @@
+.services {
+  padding-block: 60px;
+  @include media($tabletLarge) {
+    padding-block: 30px;
+  }
+}
+.services__blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 120px;
+
+  justify-content: center;
+  align-items: center;
+
+  @include media(1110px) {
+    column-gap: 80px;
+  }
+
+  @include media($tabletLarge) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 30px;
+  }
+}
+
+.services__title {
+  margin-bottom: 24px;
+}
+
+.services__text {
+  margin-bottom: 32px;
+}
+
+.services__advantages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  @include media($tabletSmall) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service__advantage-item {
+    padding-left: 32px;
+    width: 45%;
+
+    @include media($tabletSmall) {
+      width: 100%;
+    }
+
+    position: relative;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--text-headers-color);
+      margin-bottom: 4px;
+    }
+
+    span {
+      position: absolute;
+      color: #fff;
+      text-align: center;
+
+      top: 20px;
+      left: 0;
+
+      width: 25px;
+      height: 25px;
+
+      border-radius: 50%;
+      background-color: var(--accent-color);
+
+      @include media($tabletSmall) {
+        top: 0;
+      }
+    }
+  }
+}
+
+.services__image {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+
+  img:first-child {
+    grid-column: -1/1;
+  }
+
+  .services__custtomers {
+    box-shadow: 0px 4px 32px 0px #324b682b;
+    color: var(--text-headers-color);
+    padding: 12px;
+    border-radius: 12px;
+
+    background-color: var(--page-bg);
+
+    position: absolute;
+    top: 96px;
+    left: -58px;
+
+    img {
+      padding-bottom: 16px;
+    }
+
+    .services__custtomers-text {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    span {
+      color: var(--accent-color);
+    }
+    @include media($tabletSmall) {
+      display: none;
+    }
+  }
+}

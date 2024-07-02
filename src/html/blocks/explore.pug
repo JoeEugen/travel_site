@@ -1,0 +1,19 @@
+div.explore 
+    div.container 
+        div.explore__blocks 
+            div.explore__image 
+                img(src=require('./../images/explore/image.jpg'), alt="")
+
+                include ./elements/marketing-element.pug
+                +marketing-element('explore__marketing', require('./../images/explore/heaven-resort.jpg'), 450, (4.8))
+
+                div.explore__tour-guide 
+                    img(src=require('./../images/explore/jake-anderson.jpg'), alt="")
+                    div.explore__guide-title 
+                        span.explore__name Jake Anderson
+                        span.explore__post Best Tour Guide
+
+            div.explore__title 
+                h2.title-2 With Our Service We Will Explore Something Different
+                p.text Uncover hidden gems and immerse yourself in vibrant cultures. From breathtaking landscapes to awe-inspiring destinations, let us guide you to the most extraordinary places on the planet
+                button.button.explore__button(type="button") Explore more

@@ -1,0 +1,16 @@
+section.popular 
+    div.container 
+        div.popular__header 
+            div.popular__title 
+                h2.title-3 Popular Destinations
+                p.text See our popular destinations that our client choose
+            div.popular__buttons 
+                button.popular__prew(type="button") 
+                    img(src=require('./../../images/icons/button_prew.svg'), alt="")
+                button.popular__next(type="button") 
+                    img(src=require('./../../images/icons/button-next.svg'), alt="")
+    div.container
+        div.popular__content 
+            div.swiper 
+                div.swiper-wrapper 
+                    include ./elements/destination.pug

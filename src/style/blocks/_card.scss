@@ -1,0 +1,44 @@
+.card {
+  max-width: auto;
+  .card__image {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card__title {
+    @include flexBlock(32px);
+    color: var(--text-headers-color);
+
+    margin-bottom: 4px;
+
+    .card__raiting {
+      position: relative;
+
+      &::before {
+        content: "";
+
+        background-image: url("./../images/icons/star-small.svg");
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: 17px 16px;
+
+        position: absolute;
+        top: 3px;
+        left: -19px;
+
+        height: 17px;
+        width: 16px;
+      }
+    }
+  }
+
+  .card__price--dollor {
+    color: var(--accent-color);
+  }
+
+  .card__price--summ {
+    color: var(--text-headers-color);
+    font-weight: 500;
+  }
+}

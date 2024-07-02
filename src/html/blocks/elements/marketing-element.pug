@@ -1,0 +1,10 @@
+mixin marketing-element(name, img, price, raiting)
+    div.marketing(class= name)
+        img(src= img, alt="")
+        div.marketing__description 
+            div.marketing__title 
+                    | Heaven Resort
+            div.marketing__price 
+                    | Starts from #[span.explore-marketing__price--dollor $]#[span.explore-marketing__price--summ= price]
+        div.marketing__rating= raiting
+

@@ -1,0 +1,22 @@
+.partners {
+  padding-block: 60px;
+  @include media($tabletLarge) {
+    padding-block: 30px;
+  }
+}
+.partners__row {
+  @include flexBlock(32px);
+
+  @include media($tabletLarge) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .partners__content {
+    @include flexBlock(32px);
+    @include media($tabletLarge) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

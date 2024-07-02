@@ -1,0 +1,18 @@
+div.container 
+    div.footer__row 
+        div.footer__desc 
+            img.footer__logo.logo(src=require('./../../images/navbar/logo.svg'))
+            p.footer__text Wanderlust meets wander well – Experience seamless travel with our services.
+        div.footer__nav 
+            div.footer__nav-item
+                h4 Company
+                ul.footer__nav-list 
+                    each item in ['About Us', 'Blog', 'Customers', 'Packages', 'Community']
+                        li 
+                            a(href = '#')= item
+            div.footer__nav-item
+                h4 Help
+                ul.footer__nav-list 
+                    each item in ['Support', 'FAQs', 'Refund Policy']
+                        li 
+                            a(href = '#')= item

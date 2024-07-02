@@ -1,0 +1,139 @@
+.nav__burger-icon {
+  display: none;
+
+  @include media($tabletSmall) {
+    display: block;
+    width: 30px; // Ширина иконки
+    height: 20px; // Высота иконки
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+
+    // Используется & для генерации псевдоэлементов в SCSS
+    &::before,
+    &::after,
+    & > div {
+      content: "";
+      position: absolute;
+      width: 100%; // 100% от родительского элемента .burger-icon
+      height: 2px; // Высота горизонтальной линии
+      background-color: #000; // Цвет линии
+      transition: all 0.3s ease; // Анимация для изменения состояния меню
+    }
+
+    // Топ линия
+    &::before {
+      top: 0;
+    }
+
+    // Средняя линия
+    & > div {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    // Нижняя линия
+    &::after {
+      bottom: 0;
+    }
+
+    // Пример анимации для открытия меню, можно активировать через добавление класса, например, .active
+    &.active {
+      &::before {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      & > div {
+        transform: scale(0); // Скрывает среднюю линию
+      }
+
+      &::after {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.nav__mobile-menu {
+  display: none;
+
+  &.hidden {
+    display: none;
+  }
+
+  @media screen and (max-width: 820px) {
+    display: block;
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #4eb9f7bb;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+
+    .nav__mobile-list {
+      @include flexBlock(24px);
+      flex-direction: column;
+      color: var(--page-bg);
+
+      font-size: 24px;
+      a {
+        transition: 0.2s ease;
+      }
+      a.active,
+      a:hover {
+        color: var(--accent-color);
+      }
+    }
+    .nav__mobile-buttons {
+      @include flexBlock(12px);
+      flex-direction: column;
+
+      font-size: 24px;
+
+      .login-button {
+        @include flexBlock(8px);
+        justify-content: center;
+
+        padding: 8px 20px;
+
+        width: 100%;
+
+        border: var(--border);
+        border-radius: 8px;
+
+        transition: 0.2s ease all;
+      }
+
+      .login-button:hover,
+      .login-button:focus {
+        opacity: 0.6;
+      }
+
+      .sign-button {
+        @include flexBlock(8px);
+        justify-content: center;
+
+        padding: 8px 20px;
+
+        color: var(--page-bg);
+        background-color: var(--text-headers-color);
+
+        border-radius: 8px;
+
+        transition: 0.2s ease all;
+      }
+
+      .sign-button:hover,
+      .sign-button:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+}

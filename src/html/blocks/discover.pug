@@ -1,0 +1,28 @@
+section.discover
+    div.container
+        div.discover__blocks
+            div.discover__desc 
+                div.discover__title 
+                    h1.title-1.title-1--decor Discover your favorite place with us
+                div.discover__text.text 
+                    p Your journey begins here with our curated travel experiences. Discover new horizons, create lasting memories, and explore the world with our expertly crafted itineraries.
+                div.discover__form 
+                    form.search-form(action="search-form" mehod="")
+                        label.search-form__label.search-form__label--map(for='location' name="location")
+                            span Locations
+                            input#location(autocomplete='off' type="text" placeholder="e.g Bali, Indonesia")
+                        div.search-form__devider
+                        label.search-form__label.search-form__label--calendar(for='date' name="date")
+                            span Date and time
+                            input#date(autocomplete='off' type="text" placeholder="DD/MM/YYYY" )
+                        button.search-form__button(type="submit") 
+                            img(src=require('./../images/header/search.svg') alt='')
+            div.discover__picture
+                div.discover__image 
+                    img(src=require('./../images/header/subtract.png') alt='')
+                include ./elements/marketing-element.pug
+                +marketing-element('discover-marketing', require('./../images/header/heaven.jpg'), 400, (4.5))
+                div.discover__scroll 
+                    div.scroll__block
+                        img.scroll__text(src=require('./../images/header/scroll-down-text.svg'))
+                        img.scroll__icon(src=require('./../images/header/scroll-button.svg'))

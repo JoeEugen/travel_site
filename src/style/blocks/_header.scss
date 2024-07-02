@@ -1,0 +1,66 @@
+.header {
+  padding-block: 16px;
+
+  color: var(--text-headers-color);
+
+  .nav {
+    @include flexBlock(32px);
+
+    .nav__list {
+      @include flexBlock(24px);
+      a {
+        transition: 0.2s ease;
+      }
+      a.active,
+      a:hover {
+        color: var(--accent-color);
+      }
+
+      @include media($tabletSmall) {
+        display: none;
+      }
+    }
+
+    .nav__buttons {
+      @include flexBlock(12px);
+
+      @include media($tabletSmall) {
+        display: none;
+      }
+
+      .login-button {
+        @include flexBlock(8px);
+
+        padding: 8px 20px;
+
+        border: var(--border);
+        border-radius: 8px;
+
+        transition: 0.2s ease all;
+      }
+
+      .login-button:hover,
+      .login-button:focus {
+        opacity: 0.6;
+      }
+
+      .sign-button {
+        @include flexBlock(8px);
+
+        padding: 8px 20px;
+
+        color: var(--page-bg);
+        background-color: var(--text-headers-color);
+
+        border-radius: 8px;
+
+        transition: 0.2s ease all;
+      }
+
+      .sign-button:hover,
+      .sign-button:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+}

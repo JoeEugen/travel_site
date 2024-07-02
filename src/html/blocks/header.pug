@@ -1,0 +1,23 @@
+header.header
+    div.container
+        nav.nav 
+            a.logo
+                img(src=require('./../../images/navbar/logo.svg'), alt="logo")
+            ul.nav__list
+                each item, key in {'Home': '/', 'About': '/about', 'Packages': '/packages', 'FAQ': '/faq', 'Community': '/community'}
+                    li.nav__item
+                        a(href=item)= key
+            div.nav__buttons
+                each item, key in {'Login':['/login', 'login-button'], 'Sign Up':['/sidn', 'sign-button']}
+                    a(href=item[0] class=item[1])= key
+            div.nav__burger-icon 
+                div
+            
+            div.nav__mobile-menu.hidden
+                ul.nav__mobile-list
+                    each item, key in {'Home': '/', 'About': '/about', 'Packages': '/packages', 'FAQ': '/faq', 'Community': '/community'}
+                        li.nav__mobile-item
+                            a(href=item)= key
+                div.nav__mobile-buttons
+                    each item, key in {'Login':['/login', 'login-button'], 'Sign Up':['/sidn', 'sign-button']}
+                        a(href=item[0] class=item[1])= key

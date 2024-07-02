@@ -1,0 +1,54 @@
+.marketing {
+  display: inline-flex;
+
+  box-shadow: 0px 4px 34px rgba(50, 75, 104, 0.2);
+  border-radius: 12px;
+
+  background-color: var(--page-bg);
+
+  padding: 12px;
+
+  .marketing__description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: 16px;
+    margin-right: 59px;
+
+    .marketing__title {
+      font-size: 18px;
+      color: var(--text-headers-color);
+    }
+    .marketing__price--dollor {
+      font-weight: 500;
+      color: var(--accent-color);
+    }
+    .marketing__price--summ {
+      font-weight: 500;
+      color: var(--text-headers-color);
+    }
+  }
+
+  .marketing__rating {
+    font-weight: 500;
+    color: var(--text-headers-color);
+
+    position: relative;
+
+    &::before {
+      content: "";
+
+      background-image: url("./../images/icons/star-small.svg");
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 17px 16px;
+
+      position: absolute;
+      top: 3px;
+      left: -19px;
+
+      height: 17px;
+      width: 16px;
+    }
+  }
+}

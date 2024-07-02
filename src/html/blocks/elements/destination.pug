@@ -1,0 +1,19 @@
+- let destinations = [
+-{ city: 'Venice, Italy', image: 'venice.jpg', rating: '(4.5)', price: 900 },
+-{ city: 'Bali, Indonesia', image: 'bali.jpg', rating: '4.5', price: 480 },
+-{ city: 'Bangkok, Thailand', image: 'bangkok.jpg', rating: '4.5', price: 440 },
+-{ city: 'Santorini, Greek', image: 'santorini.jpg', rating: '4.5', price: 900 },
+-{ city: 'Paris, France', image: 'paris.jpg', rating: '4.5', price: 1100 },
+-{ city: 'New York, USA', image: 'new-york.jpg', rating: '4.5', price: 1800 },
+-{ city: 'Dubai, UAE', image: 'dubai.jpg', rating: '4.5', price: 900 }
+-]
+
+each card in destinations
+    article.card.swiper-slide
+        div.card__image 
+            img(src=require(`./../../../images/product/${card.image}`), alt="")
+        div.card__title
+            h3.card__header.title-5= card.city
+            span.card__raiting= card.rating
+        div.card__price 
+            | Starts from #[span.card__price--dollor $]#[span.card__price--summ= card.price]
